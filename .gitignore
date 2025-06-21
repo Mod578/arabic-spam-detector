@@ -1,12 +1,17 @@
-# Python cache
+# Python virtual environment
+venv/
+.env
+
+# Python cache files
 __pycache__/
 *.pyc
-
-# Virtual Environments
-venv/
-*.env
-.env
 
 # IDE and editor specific files
 .vscode/
 .idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Frontend dependencies
+node_modules/
