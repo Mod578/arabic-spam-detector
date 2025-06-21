@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المحلل الذكي</title>
+  <meta name="description" content="استخدم المحلل الذكي لكشف التهديدات ومحاولات الاحتيال في النصوص. تحليل فوري لحمايتك الرقمية مع هوية بصرية جديدة.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'arabic': ['Tajawal', 'sans-serif'],
+          },
+          colors: {
+            // Beacon of Security Palette
+            'beacon-deep-bg': '#0D1117',        // Deep, dark background (like GitHub dark)
+            'beacon-surface': '#161B22',        // Main component surfaces (cards, header)
+            'beacon-surface-alt': '#21262D',    // Alternate surfaces (inputs, nested items)
+            'beacon-border': '#30363D',         // Soft borders for UI elements
+            'beacon-text-primary': '#F0F8FF',   // AliceBlue - Bright, clear primary text
+            'beacon-text-secondary': '#9CA3AF',  // Gray 400 - Softer secondary text
+            'beacon-accent-primary': '#22D3EE',  // Cyan 400 - Bright, guiding beacon color
+            'beacon-accent-secondary': '#A78BFA',// Violet 400 - For secondary highlights or accents
+            'beacon-success': '#34D399',        // Emerald 400 - Success, low risk
+            'beacon-notice': '#F59E0B',         // Amber 500 - Notice, medium risk
+            'beacon-warning': '#EF4444',        // Red 500 - Warning, high risk
+          },
+          boxShadow: {
+            'card': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // Default card shadow
+            'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            'beacon-soft': '0 0 15px 0 rgba(34, 211, 238, 0.15)', // Soft glow for accent elements
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Global styles including custom scrollbar */
+    body {
+      margin: 0;
+      font-family: 'Tajawal', 'sans-serif';
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: theme('colors.beacon-text-primary'); 
+      background-color: theme('colors.beacon-deep-bg');
+    }
+
+    /* Animation for ResultsDisplay & HistoryDisplay*/
+    @keyframes fadeInUpSmooth {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInUpSmooth {
+      animation: fadeInUpSmooth 0.6s ease-out forwards;
+    }
+
+    /* Animation for ErrorNotification */
+    @keyframes fadeInDownSmooth {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInDownSmooth {
+      animation: fadeInDownSmooth 0.4s ease-out forwards;
+    }
+
+    /* Custom scrollbar styles - Beacon Theme */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: theme('colors.beacon-surface-alt / 50%'); 
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: theme('colors.beacon-accent-primary / 70%');
+        border-radius: 10px;
+        border: 2px solid theme('colors.beacon-surface-alt / 30%'); 
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: theme('colors.beacon-accent-primary / 90%');
+    }
+
+    /* Ensure icons align well in RTL */
+    .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-x-reverse: 1; 
+    }
+    
+    /* Font import - Tajawal */
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-arabic bg-beacon-deep-bg text-beacon-text-primary">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
