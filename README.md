@@ -6,7 +6,7 @@
 
 ### **[➡️ View the Full Interactive Project Report](https://mod578.github.io/arabic-spam-detector/)**
 
-*(Note: Replace the link above with the link to your live GitHub Pages site once deployed)*
+*(www.170.me/index2.html)*
 
 ---
 
